@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+     
+    </head>
+    <body>
+
+        <button onclick="setcookie()">SetCookie</button>
+        <button onclick="getcookie()">GetCookie</button>
+        <button onclick="updatecookie()">UpdateCookie</button>
+        <button onclick="deletecookie()">DeleteCookie</button>
+
+        <div id="output"></div>
+
+          <!-- <form name="myForm" action="">
+             <input type="text" name="customer" placeholder="enter your name">
+             <input type="button" value="get cookie" onclick="getCookie()">
+          </form> -->
+
+        
+    
+        <script>
+                  
+        //    function getCookie () {
+        //        if(document.myForm.customer.value == ' '){
+        //             alert('Enter some value')
+        //             return;
+        //        }
+        //        cookieValue = escape(document.myForm.customer.value) + ";"
+        //        document.cookie = "name" + cookieValue;
+        //        document.write("setting cookies :" + "name" + cookieValue);
+        //    }
+
+        function setcookie () {
+            document.cookie = "Username=Anjali Tripathi;";
+            document.getElementById('output').textContent = "username : Anjali Tripathi";
+        }
+
+        function getcookie () {
+             const cookie = document.cookie;
+             const value = cookie.split(';')
+             .find((row) => row.startsWith('username='))
+             .split('=')[1]
+             document.getElementById('output').textContent = `value is : ${value}`
+        }
+      
+        </script>
+    </body>
+
+</html>
+
